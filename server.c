@@ -25,9 +25,11 @@ int	main(void)
 {
 	ft_printf("The server's PID is : %d.\n", getpid());
 	ft_printf("Waiting...\n");
-	signal(SIGUSR1, ft_handle_signals);
-	signal(SIGUSR2, ft_handle_signals);
 	while (1)
+	{
+		signal(SIGUSR1, ft_handle_signals);
+		signal(SIGUSR2, ft_handle_signals);
 		pause();
+	}
 	return (0);
 }

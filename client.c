@@ -46,14 +46,14 @@ void	ft_send_to_server(int id, char *str)
 			kill(id, SIGUSR1);
 		else if (bits[i] == '1')
 			kill(id, SIGUSR2);
-		usleep(1000);
+		usleep(850);
 		i++;
 	}
 	i = 0;
 	while (i < 8)
 	{
 		kill(id, SIGUSR1);
-		usleep(1000);
+		usleep(850);
 		i++;
 	}
 	free(bits);
