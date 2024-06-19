@@ -1,10 +1,20 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: axu <axu@student.42luxembourg.lu>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/19 10:31:22 by axu               #+#    #+#             */
+/*   Updated: 2024/06/19 10:32:26 by axu              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "minitalk.h"
 
 void	ft_handle_signals(int signum)
 {
-	static int	bit = 0;
-	static unsigned char c = 0;
+	static int				bit = 0;
+	static unsigned char	c = 0;
 
 	if (signum == SIGUSR2)
 		c = c | (1 << (7 - bit));
@@ -19,7 +29,6 @@ void	ft_handle_signals(int signum)
 		c = 0;
 	}
 }
-
 
 int	main(void)
 {
